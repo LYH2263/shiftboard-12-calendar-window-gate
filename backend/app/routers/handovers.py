@@ -16,6 +16,11 @@ def get_handovers():
     return svc.list_handovers()
 
 
+@router.get("/window-status")
+def get_window_status(from_shift_id: int, to_shift_id: int):
+    return svc.window_status(from_shift_id, to_shift_id)
+
+
 @router.get("/{handover_id}")
 def get_one(handover_id: int):
     return svc.get_handover(handover_id)
